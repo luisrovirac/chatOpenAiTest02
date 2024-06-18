@@ -201,7 +201,7 @@ const Chat = ({
     stream.on("toolCallDelta", toolCallDelta);
 
     // events without helpers yet (e.g. requires_action and run.done)
-    stream.on("event", (event) => {
+    stream.off("event", (event) => {
       if (event.event === "thread.run.requires_action")
         handleRequiresAction(event);
       if (event.event === "thread.run.completed") handleRunCompleted();
