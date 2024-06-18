@@ -190,8 +190,8 @@ const Chat = ({
 
   const handleReadableStream = (stream: AssistantStream) => {
     // messages
-    stream.on("textCreated", handleTextCreated);
-    stream.on("textDelta", handleTextDelta);
+    stream.off("textCreated", handleTextCreated);
+    stream.off("textDelta", handleTextDelta);
 
     // image
     stream.on("imageFileDone", handleImageFileDone);
