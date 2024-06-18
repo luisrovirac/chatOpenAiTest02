@@ -190,8 +190,8 @@ const Chat = ({
 
   const handleReadableStream = (stream: AssistantStream) => {
     // messages
-    stream.off("textCreated", handleTextCreated);
-    stream.off("textDelta", handleTextDelta);
+    stream.on("textCreated", handleTextCreated);
+    stream.on("textDelta", handleTextDelta);
 
     // image
     stream.on("imageFileDone", handleImageFileDone);
@@ -201,7 +201,7 @@ const Chat = ({
     stream.on("toolCallDelta", toolCallDelta);
 
     // events without helpers yet (e.g. requires_action and run.done)
-    stream.off("event", (event) => {
+    stream.on("event", (event) => {
       if (event.event === "thread.run.requires_action")
         handleRequiresAction(event);
       if (event.event === "thread.run.completed") handleRunCompleted();
