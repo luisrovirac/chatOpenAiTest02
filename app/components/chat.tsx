@@ -96,6 +96,9 @@ const Chat = ({
         }),
       }
     );
+
+	console.log("line 100 ... response.body");
+	console.log(response.body);
     const stream = AssistantStream.fromReadableStream(response.body);
     handleReadableStream(stream);
   };
