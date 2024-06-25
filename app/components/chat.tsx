@@ -123,6 +123,7 @@ const Chat = ({
         }),
       }
     );
+	console.log("line 126 ... response.body");
     const stream = AssistantStream.fromReadableStream(response.body);
     handleReadableStream(stream);
   };
