@@ -12,6 +12,13 @@ export async function POST(request, { params: { threadId } }) {
     content: content,
   });
 
+  const xstream = openai.beta.threads.runs.create(threadId, {
+    assistant_id: assistantId,
+  });
+  console.log("line 18 route.ts");
+  console.log(xstream);
+
+
   const stream = openai.beta.threads.runs.stream(threadId, {
     assistant_id: assistantId,
   });
