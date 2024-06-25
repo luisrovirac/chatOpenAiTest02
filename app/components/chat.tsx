@@ -18,8 +18,8 @@ const UserMessage = ({ text }: { text: string }) => {
 };
 
 const AssistantMessage = ({ text }: { text: string }) => {
-	console.log("line 21... styles.assistantMessage");
-	console.log(styles.assistantMessage);
+	//console.log("line 21... styles.assistantMessage");
+	//console.log(styles.assistantMessage);
   return (
     <div className={styles.assistantMessage}>
       <Markdown>{text}</Markdown>
@@ -43,12 +43,12 @@ const CodeMessage = ({ text }: { text: string }) => {
 const Message = ({ role, text }: MessageProps) => {
   switch (role) {
     case "user":
-	 	console.log("line 46... {text}");
-		console.log({text});
+	 	//console.log("line 46... {text}");
+		//console.log({text});
 		  return <UserMessage text={text} />;
     case "assistant":
-		console.log("line 50... {text}");
-		console.log({text});
+		//console.log("line 50... {text}");
+		//console.log({text});
       return <AssistantMessage text={text} />;
     case "code":
       return <CodeMessage text={text} />;
@@ -103,8 +103,8 @@ const Chat = ({
       }
     );
 
-	console.log("line 106 ... response.body");
-	//console.log(response.body);
+	//console.log("line 106 ... response.body");
+	////console.log(response.body);
     const stream = AssistantStream.fromReadableStream(response.body);
     handleReadableStream(stream);
   };
@@ -123,7 +123,7 @@ const Chat = ({
         }),
       }
     );
-	console.log("line 126 ... response.body");
+	//console.log("line 126 ... response.body");
     const stream = AssistantStream.fromReadableStream(response.body);
     handleReadableStream(stream);
   };
