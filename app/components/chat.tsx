@@ -18,6 +18,8 @@ const UserMessage = ({ text }: { text: string }) => {
 };
 
 const AssistantMessage = ({ text }: { text: string }) => {
+	console.log("line 21... styles.assistantMessage");
+	console.log(styles.assistantMessage);
   return (
     <div className={styles.assistantMessage}>
       <Markdown>{text}</Markdown>
@@ -41,8 +43,12 @@ const CodeMessage = ({ text }: { text: string }) => {
 const Message = ({ role, text }: MessageProps) => {
   switch (role) {
     case "user":
-      return <UserMessage text={text} />;
+	 	console.log("line 46... {text}");
+		console.log({text});
+		  return <UserMessage text={text} />;
     case "assistant":
+		console.log("line 50... {text}");
+		console.log({text});
       return <AssistantMessage text={text} />;
     case "code":
       return <CodeMessage text={text} />;
